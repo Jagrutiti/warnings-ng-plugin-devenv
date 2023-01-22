@@ -274,14 +274,15 @@ class JavacParserTest extends AbstractParserTest {
                             "/home/hudson/hudson/data/jobs/Hudson main/workspace/remoting/src/test/java/hudson/remoting/BinarySafeStreamTest.java");
         }
     }
+    
+    @Test
+    void shouldParseJavaWarningsInMavenCompilerPlugin(){
+        Report file = parse("tracker_issue63346.log");
 
-        void shouldParseJavaWarningsInMavenCompilerPlugin(){
-            Report file = parse("tracker_issue63346.log");
-
-            if(file.get(0).toString().contains("maven-compiler-plugin")){
-                // warning should be parsed by Java Parser
-            }
-
+        if(file.get(0).toString().contains("maven-compiler-plugin")){
+            // warning should be parsed by Java Parser
         }
+
+    }
 }
 
