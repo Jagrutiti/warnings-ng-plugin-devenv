@@ -275,13 +275,13 @@ class JavacParserTest extends AbstractParserTest {
         }
     }
 
-    void shouldParseJavaWarningsInMavenCompilerPlugin(){
-        Report file = parse("trackerissue63346.log");
+        void shouldParseJavaWarningsInMavenCompilerPlugin(){
+            Report file = parse("tracker_issue63346.log");
 
-        if(file.get(0).toString().contains("maven-compiler-plugin")){
-            // warning should be parsed by Java Parser
+            if(file.get(0).toString().contains("maven-compiler-plugin")){
+                // warning should be parsed by Java Parser
+            }
+
         }
-
-    }
 }
 
